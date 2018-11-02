@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 
-from alpha.views import IndexView, SignupView, ActivateView
+from alpha.views import IndexView, SignupView, ActivateView, PageView
 
 from alpha.views import set_language
 
@@ -14,5 +14,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='alpha/login.html', success_url='/'), name='login'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
 
+    path('page/<str:page>/', PageView.as_view(), name='page'),
     path('language/<str:language>', set_language, name='language-set'),
 ]

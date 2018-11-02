@@ -11,6 +11,8 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 
+from django.utils.translation import ugettext_lazy as _
+
 from alpha.tokens import account_activation_token
 
 class SignupForm(UserCreationForm):
@@ -25,3 +27,9 @@ class SignupForm(UserCreationForm):
 
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError(_('Email already exists'))
+        return email
