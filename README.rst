@@ -53,7 +53,8 @@ Setup::
   python3 -m venv venv
   source venv/bin/activate
   pip install --upgrade wheel pip
-  pip install -r requirement.txt
+  pip install -r requirement/production.txt
+  pip install -r requirement/development.txt
 
 Configure::
 
@@ -65,7 +66,6 @@ To Do:
 
 - clear up static
 - make a icon
-- multi language
 - user help
 - testing
 - document
