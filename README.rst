@@ -62,10 +62,17 @@ Configure::
   python manage.py createsuperuser
   python manage.py runserver
 
+Internationalization::
+
+  python manage.py makemessages
+  django-admin makemessages -a
+  django-admin makemessages -l de 
+
+  python manage.py compilemessages
+  django-admin compilemessages
+
 To Do:
 
-- clear up static
-- make a icon
 - user help
 - testing
 - document

@@ -1,15 +1,16 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
+from django.utils.translation import ugettext_lazy as _
 
 class Project(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='projects')
-    name = models.CharField(max_length=256)
-    description = models.TextField(default='')
-    goal = models.TextField()
+    name = models.CharField(_('Project name'), max_length=256)
+    description = models.TextField(_('Description'), default='')
+    goal = models.TextField(_('Goal'))
 
-    priority = models.IntegerField(default=8, choices=[(i,str(i)) for i in range(11)])
-    percent = models.IntegerField(default=5)
+    priority = models.IntegerField(_('Priority'), default=8, choices=[(i,str(i)) for i in range(11)])
+    percent = models.IntegerField(_('Process'), default=5)
 
     class Meta:
         ordering = ['-priority', '-percent']
@@ -24,9 +25,9 @@ class Project(models.Model):
 class ProjectReview(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='reviews')
     create_at = models.DateTimeField(auto_now_add=True)
-    priority = models.IntegerField(default=8, choices=[(i,str(i)) for i in range(11)])
-    percent = models.IntegerField(default=5)
-    description = models.TextField(default='')
+    priority = models.IntegerField(_('Priority'), default=8, choices=[(i,str(i)) for i in range(11)])
+    percent = models.IntegerField(_('Process'), default=5)
+    description = models.TextField(_('Description'), default='')
 
     class Meta:
         ordering = ['-create_at']

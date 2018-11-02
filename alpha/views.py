@@ -14,8 +14,21 @@ from django.contrib.auth import login, authenticate
 
 from alpha.tokens import account_activation_token
 
+from django.utils import translation
+
 from django.contrib.auth.forms import AuthenticationForm
 from alpha.forms import SignupForm
+
+def set_language(request, language):
+    next_url = request.GET.get('next', '/')
+    #language = translation.get_language_from_request(request)
+    print(translation.get_language())
+    translation.activate(language)
+    request.LANGUAGE_CODE = translation.get_language()
+    print(translation.get_language())
+    #activate(language)
+    #request.session[LANGUAGE_SESSION_KEY] = language
+    return redirect(next_url)
 
 class IndexView(View):
     def get(self, request):

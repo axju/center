@@ -40,16 +40,31 @@
 
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ user }}
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ user }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
 
-                <a class="dropdown-item" href="{% url 'alpha:logout' %}">{% trans "Logout"%}</a>
-              </div>
-            </li>
+              <a class="dropdown-item" href="{% url 'alpha:logout' %}">{% trans "Logout"%}</a>
+            </div>
+          </li>
         </ul>
         {% endif %}
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {{ LANGUAGE_CODE }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              {% for language in languages %}
+                <a class="dropdown-item" href="{% url 'alpha:language-set' language=language.code %}?next={{request.path}}">{{ language.name_local }} ({{ language.code }})</a>
+              {% endfor %}
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
     {% endblock %}
