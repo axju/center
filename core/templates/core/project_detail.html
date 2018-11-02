@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h2>
+      {{ object.name|title }}
+      <div class="btn-group btn-group-sm float-right">
+        <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">review</a>
+        <a class="btn btn-outline-primary" href="{% url 'core:project-update' pk=project.pk %}">edit</a>
+        <a class="btn btn-outline-primary" href="{% url 'core:project-delete' pk=project.pk %}">delete</a>
+      </div>
+    </h2>
+  </div>
+  <div class="card-body">
+    <div class="progress">
+      <div class="progress-bar" style="width:{{ object.percent }}%">{{ object.percent }}%</div>
+    </div>
+    <br>
+
+    <p><strong>Description:</strong> {{ object.description }}</p>
+    <p><strong>Goal:</strong> {{ object.goal }}</p>
+    
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="width: 150px">date</th>
+            <th>description</th>
+            <th>priority</th>
+            <th>progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for review in object.reviews.all %}
+          <tr>
+            <td>{{ review.create_at|date:'Y-m-d H:i' }}</td>
+            <td>{{ review.description }}</td>
+            <td>{{ review.priority }}</td>
+            <td>
+              <div class="progress">
+                <div class="progress-bar" style="width:{{ review.percent }}%"></div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

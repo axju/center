@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}403{% endblock %}
+
+
+{% block content %}
+<h1>403</h1>
+<p>Was hast du denn vor? <a href="{% if user.is_authenticated %} {% url 'core:project-list' %} {% else %} # {% endif %}">Hier</a> geht es zurück ;)</p>
+
+
+
+
+{% endblock %}

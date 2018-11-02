@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block javascript %}{% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 40px">P</th>
+        <th>name</th>
+        <th>percent</th>
+        <th>description</th>
+        <th>reviews</th>
+        <th style="width: 120px">actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for project in object_list %}
+      <tr class="{% if project.priority == 0 %}table-success{% elif project.priority < 6 %}table-secondary{% endif %}">
+        <td>{{ project.priority }}</td>
+        <td><a href="{{ project.get_absolute_url }}">{{ project.name|title }}</a></td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar" style="width:{{ project.percent }}%">{{ project.percent }}%</div>
+          </div>
+        </td>
+        <td>{{ project.description|truncatechars:200 }}</td>
+        <td>{{ project.reviews.count }}</td>
+        <td class="p-2">
+          <div class="btn-group btn-group-sm">
+            <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">review</a>
+            <a class="btn btn-outline-primary" href="{{ project.get_absolute_url }}">show</a>
+            <a class="btn btn-outline-primary" href="{% url 'core:project-update' pk=project.pk %}">edit</a>
+            <a class="btn btn-outline-primary" href="{% url 'core:project-delete' pk=project.pk %}">delete</a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

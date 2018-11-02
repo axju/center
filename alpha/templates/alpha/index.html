@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Willkommen{% endblock %}
+
+{% block javascript %}{% endblock %}
+
+
+{% block content %}
+<h1>Wilkommen bei Center</h1>
+
+<div class="row">
+
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header">Infos</div>
+      <div class="card-body">Center ist eine kleines Tool zum Managen von Projekten.</div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header">Einloggen</div>
+      <div class="card-body">
+        <form method="post" action="{% url 'alpha:login' %}">
+          {% csrf_token %}
+          {{ login_form|crispy }}
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header">Anmelden</div>
+      <div class="card-body">
+        <form method="post" action="{% url 'alpha:signup' %}">
+          {% csrf_token %}
+          {{ signup_form|crispy }}
+          <button type="submit" class="btn btn-primary">signup</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+{% endblock %}
