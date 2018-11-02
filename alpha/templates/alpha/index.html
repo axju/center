@@ -1,31 +1,41 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block title %}Willkommen{% endblock %}
-
-{% block javascript %}{% endblock %}
+{% block title %}{% trans "Welcome"%}{% endblock %}
 
 
 {% block content %}
-<h1>Wilkommen bei Center</h1>
+<h1>{% trans "Welcome to Center"%}</h1>
 
 <div class="row">
 
   <div class="col-4">
     <div class="card">
-      <div class="card-header">Infos</div>
-      <div class="card-body">Center ist eine kleines Tool zum Managen von Projekten.</div>
+      <div class="card-header">{% trans "Infos"%}</div>
+      <div class="card-body">
+        {% trans "A very small and lightweight project management tool."%}
+        <h3>{% trans "Features"%}</h3>
+        <ul>
+          <li>{% trans "lightweight"%}</li>
+          <li>{% trans "fast work flow"%}</li>
+          <li>{% trans "unlimited projects"%}</li>
+          <li>{% trans "classify projects according to priority"%}</li>
+          <li>{% trans "track the progress of each project"%}</li>
+          <li>{% trans "setup your own server or sing up"%}</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="col-4">
     <div class="card">
-      <div class="card-header">Einloggen</div>
+      <div class="card-header">{% trans "Login"%}</div>
       <div class="card-body">
         <form method="post" action="{% url 'alpha:login' %}">
           {% csrf_token %}
           {{ login_form|crispy }}
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary">{% trans "Login"%}</button>
         </form>
       </div>
     </div>
@@ -33,12 +43,12 @@
 
   <div class="col-4">
     <div class="card">
-      <div class="card-header">Anmelden</div>
+      <div class="card-header">{% trans "Signup"%}</div>
       <div class="card-body">
         <form method="post" action="{% url 'alpha:signup' %}">
           {% csrf_token %}
           {{ signup_form|crispy }}
-          <button type="submit" class="btn btn-primary">signup</button>
+          <button type="submit" class="btn btn-primary">{% trans "Signup"%}</button>
         </form>
       </div>
     </div>

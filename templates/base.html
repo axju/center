@@ -20,7 +20,7 @@
   <body>
     {% block navbar %}
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="{% if user.is_authenticated %} {% url 'core:project-list' %} {% else %} # {% endif %}">Center</a>      
+      <a class="navbar-brand" href="{% if user.is_authenticated %} {% url 'core:project-list' %} {% else %} # {% endif %}">Center</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,7 +31,7 @@
         <ul class="navbar-nav mr-auto">
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:project-create' %}">New Projects</a>
+            <a class="nav-link" href="{% url 'core:project-create' %}">{% trans "New Projects"%}</a>
           </li>
 
         </ul>
@@ -48,7 +48,6 @@
             </li>
         </ul>
         {% endif %}
-
       </div>
     </nav>
     {% endblock %}
@@ -71,7 +70,7 @@
 
       <footer class="footer">
         <div class="container">
-          <span class="text-muted">&copy; 2017-2018 com:soft &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span>
+          <span class="text-muted">&copy; 2017-2018 Center &middot; <a href="#">{% trans "Privacy"%}</a> &middot; <a href="#">{% trans "Terms"%}</a></span>
         </div>
       </footer>
     </main>

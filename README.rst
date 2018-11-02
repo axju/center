@@ -34,8 +34,8 @@ I searched for programs that fit my needs. But did not find it. :(
 The software developer in me is happy. Another project for my list. :D
 
 I design the project so that it meets my requirements. A simple list I can look
-throw, save the proses and the priority. Every time I look on the list, the most
-import Project is the first. I hope that I focus more on one project.
+throw, save the process and the priority. Every time I look on the list, the
+most import project is the first. I hope that I focus more on one project.
 
 
 Development

@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block title %}Review : {{ project }}{% endblock %}
+{% block title %}{% trans "Review:"%} {{ project }}{% endblock %}
 
 
 {% block content %}
-<form method="post">
-  {% csrf_token %}
-  {{ form|crispy }}
-  <button type="submit" class="btn btn-primary">Save</button>
-</form>
+<div class="row">
+  <div class="col"></div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        {% trans "Review:"%} {{ project }}
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-primary">{% trans "Save"%}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col"></div>
+
+</div>
 {% endblock %}

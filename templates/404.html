@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}404{% endblock %}
 
 
 {% block content %}
 <h1>404</h1>
-<p>Hier solltest du gar nicht hin. <a href="{% if user.is_authenticated %} {% url 'core:project-list' %} {% else %} # {% endif %}">Zurück</a></p>
+<p>{% trans "Hier solltest du gar nicht hin."%}
+  <a href="{% if user.is_authenticated %} {% url 'core:project-list' %} {% else %} # {% endif %}">{% trans "Zurück"%}</a>
+</p>
 {% endblock %}
