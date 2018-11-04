@@ -66,13 +66,15 @@ Internationalization::
 
   python manage.py makemessages
   django-admin makemessages -a
-  django-admin makemessages -l de 
+  django-admin makemessages -l de
 
   python manage.py compilemessages
   django-admin compilemessages
 
 To Do:
 
+- password reset
+- change password
 - user help
 - testing
 - document
