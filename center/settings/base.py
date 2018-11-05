@@ -15,7 +15,7 @@ from django.utils.translation import ugettext_lazy as _
 from decouple import config, Csv
 
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default='1234')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
