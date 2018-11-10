@@ -21,6 +21,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.http import Http404
 from django.utils.translation import ugettext_lazy as _
 
+from django.core.mail import send_mail
+
 from alpha.forms import SignupForm
 
 def set_language(request, language):
@@ -41,7 +43,7 @@ class PageView(View):
         try:
             return render(request, 'alpha/pages/{}.html'.format(kwargs.get('page')))
         except:
-            raise Http404(_('Page does not exist')) 
+            raise Http404(_('Page does not exist'))
 
 
 class SignupView(FormView):
@@ -62,9 +64,13 @@ class SignupView(FormView):
             'user': user,
             'activ_link':activ_link,
         })
-        email = EmailMessage(settings.ALPHA['MAIL_SUBJECT'], message, to=[form.cleaned_data.get('email')])
-        email.send()
-
+        send_mail(
+            settings.ALPHA['MAIL_SUBJECT'],
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [form.cleaned_data.get('email')],
+            fail_silently=False,
+        )
         return super().form_valid(form)
 
 

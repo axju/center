@@ -52,7 +52,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 ALPHA = {
-    'MAIL_SUBJECT': _('Activate your account on short-report'),
+    'MAIL_SUBJECT': _('Activate your account on center'),
 }
 
 

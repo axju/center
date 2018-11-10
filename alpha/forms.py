@@ -28,8 +28,8 @@ class SignupForm(UserCreationForm):
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
 
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError(_('Email already exists'))
-        return email
+    #def clean_email(self):
+    #    email = self.cleaned_data['email']
+    #    if User.objects.filter(email=email).exists():
+    #        raise forms.ValidationError(_('Email already exists'))
+    #    return email
