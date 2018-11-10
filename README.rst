@@ -92,7 +92,6 @@ following example::
   EMAIL_HOST=example.com
   EMAIL_HOST_USER=noreply@example.de
   EMAIL_HOST_PASSWORD=1234
-  INFO_EMAIL=info@example.de
 
 Now uses the command 'django-deploying' for the axju packages::
 

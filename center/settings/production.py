@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = False
 
-HOST = config('HOST', default='127.0.0.1:')
+HOST = config('HOST', default='127.0.0.1')
 
 ALLOWED_HOSTS = [HOST]
 
@@ -20,7 +20,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'center',
-        'USER': config('DB_NAME', default='user'),
+        'USER': config('DB_USER', default='user'),
         'PASSWORD': config('DB_PASSWORD', default='1234'),
         'HOST': 'localhost',
         'PORT': '',
