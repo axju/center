@@ -71,6 +71,34 @@ Internationalization::
   python manage.py compilemessages
   django-admin compilemessages
 
+Deploying
+---------
+I write a small python package to simplify the process. So install axju::
+
+  pip3 install axju
+
+Clone the center project::
+
+  git clone https://github.com/axju/center.git
+  cd center
+
+Create the .env file with your secret settings. Change the values in the
+following example::
+
+  SECRET_KEY=1234567890abcdef
+  HOST=center.short-report.de
+  DB_USER=name
+  DB_PASSWORD=1234
+  EMAIL_HOST=example.com
+  EMAIL_HOST_USER=noreply@example.de
+  EMAIL_HOST_PASSWORD=1234
+  INFO_EMAIL=info@example.de
+
+Now uses the command 'django-deploying' for the axju packages::
+
+  django-deploying --setting production
+
+
 To Do:
 
 - password reset

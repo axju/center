@@ -56,6 +56,7 @@ coverage.xml
 local_settings.py
 db.sqlite3
 staticfiles
+gunicorn_start
 
 # Flask stuff:
 instance/

@@ -2,27 +2,31 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['mysite.com', ]
+HOST = config('HOST', default='127.0.0.1:')
 
+ALLOWED_HOSTS = [HOST]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = 'smtp.mailgun.org'
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-#EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-#EMAIL_USE_TLS = True
+EMAIL_HOST = config('EMAIL_HOST', default='')
+EMAIL_PORT = config('EMAIL_PORT', default=465, cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_SUBJECT_PREFIX = '[Center] '
+INFO_EMAIL = config('INFO_EMAIL', default='')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangogirls',
-        'USER': 'name',
-        'PASSWORD': '1234',
+        'NAME': 'center',
+        'USER': config('DB_NAME', default='user'),
+        'PASSWORD': config('DB_PASSWORD', default='1234'),
         'HOST': 'localhost',
         'PORT': '',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
