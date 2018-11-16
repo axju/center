@@ -52,6 +52,7 @@ class SignupView(FormView):
     success_url = '/'
 
     def form_valid(self, form):
+        form.save()
         user = form.instance
         user.is_active = False
         user.save()
