@@ -6,16 +6,15 @@
 
 
 {% block content %}
-<h1>{% trans "Welcome to Center"%}</h1>
 
 <div class="row">
 
   <div class="col-4">
     <div class="card">
-      <div class="card-header">{% trans "Infos"%}</div>
+      <h2 class="card-header">{% trans "Welcome to Center"%}</h2>
       <div class="card-body">
-        {% trans "Still a beta version. Try at your own risk."%}
-        {% trans "A very small and lightweight project management tool."%}
+        <p class="text-warning">{% trans "Still a beta version. Try at your own risk."%}</p>
+        <p>{% trans "A very small and lightweight project management tool."%}</p>
         <h3>{% trans "Features"%}</h3>
         <ul>
           <li>{% trans "lightweight"%}</li>
@@ -31,7 +30,7 @@
 
   <div class="col-4">
     <div class="card">
-      <div class="card-header">{% trans "Login"%}</div>
+      <h2 class="card-header">{% trans "Login"%}</h2>
       <div class="card-body">
         <form method="post" action="{% url 'alpha:login' %}">
           {% csrf_token %}
@@ -44,7 +43,7 @@
 
   <div class="col-4">
     <div class="card">
-      <div class="card-header">{% trans "Signup"%}</div>
+      <h2 class="card-header">{% trans "Signup"%}</h2>
       <div class="card-body">
         <form method="post" action="{% url 'alpha:signup' %}">
           {% csrf_token %}
