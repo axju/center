@@ -14,6 +14,7 @@ import os
 from django.utils.translation import ugettext_lazy as _
 from decouple import config, Csv
 
+from django.contrib.messages import constants as messages
 
 SECRET_KEY = config('SECRET_KEY', default='1234')
 
@@ -107,8 +108,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'center.wsgi.application'
 
 
-
-
-
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}

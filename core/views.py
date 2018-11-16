@@ -19,6 +19,7 @@ from core.forms import ProjectForm, ProjectReviewForm
 class ProjectCreate(LoginRequiredMixin, CreateView):
     model = Project
     fields = ['name', 'description', 'goal', 'percent', 'priority']
+    success_url = reverse_lazy('core:project-list')
 
     def get_form_class(self):
         return ProjectForm

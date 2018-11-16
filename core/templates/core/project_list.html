@@ -31,7 +31,7 @@
         <td>{{ project.reviews.count }}</td>
         <td class="p-2">
           <div class="btn-group btn-group-sm">
-            <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">{% trans "Review"%}</a>
+            <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">{% trans "Update"%}</a>
             <a class="btn btn-outline-primary" href="{{ project.get_absolute_url }}">{% trans "Show"%}</a>
             <a class="btn btn-outline-primary" href="{% url 'core:project-update' pk=project.pk %}">{% trans "Edit"%}</a>
             <a class="btn btn-outline-primary" href="{% url 'core:project-delete' pk=project.pk %}">{% trans "Delete"%}</a>

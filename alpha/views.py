@@ -22,8 +22,22 @@ from django.http import Http404
 from django.utils.translation import ugettext_lazy as _
 
 from django.core.mail import send_mail
+from django.contrib import messages
 
 from alpha.forms import SignupForm
+
+from django.contrib.auth.signals import user_logged_out, user_logged_in
+from django.dispatch import receiver
+
+
+
+@receiver(user_logged_out)
+def on_user_logged_out(sender, request, **kwargs):
+    messages.add_message(request, messages.INFO, 'You have been logged out. Have a nice day.')
+
+@receiver(user_logged_in)
+def on_user_logged_in(sender, request, **kwargs):
+    messages.add_message(request, messages.INFO, 'Hello {}, nice to see you :)'.format(request.user))
 
 def set_language(request, language):
     next_url = request.GET.get('next', '/')
@@ -72,6 +86,7 @@ class SignupView(FormView):
             [form.cleaned_data.get('email')],
             fail_silently=False,
         )
+        messages.add_message(self.request, messages.INFO, _('We send you a active link. Please confirm.'))
         return super().form_valid(form)
 
 
@@ -87,6 +102,7 @@ class ActivateView(View):
             user.is_active = True
             user.save()
             login(request, user)
+            messages.add_message(request, messages.INFO, _('Welcome to Center. Your account is now activate.'))
             return redirect(settings.LOGIN_REDIRECT_URL)
 
         return redirect('/')
