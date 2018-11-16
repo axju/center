@@ -19,7 +19,7 @@
     </thead>
     <tbody>
       {% for project in object_list %}
-      <tr class="{% if project.priority == 0 %}table-success{% elif project.priority < 6 %}table-secondary{% endif %}">
+      <tr class="{% if project.priority == 0 %}table-success{% elif project.priority < 5 %}table-secondary{% endif %}">
         <td>{{ project.priority }}</td>
         <td><a href="{{ project.get_absolute_url }}">{{ project.name|title }}</a></td>
         <td>
