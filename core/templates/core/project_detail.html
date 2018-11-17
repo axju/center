@@ -9,7 +9,7 @@
     <h2>
       {{ object.name|title }}
       <div class="btn-group btn-group-sm float-right">
-        <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">{% trans "Review"%}</a>
+        <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">{% trans "Update"%}</a>
         <a class="btn btn-outline-primary" href="{% url 'core:project-update' pk=project.pk %}">{% trans "Edit"%}</a>
         <a class="btn btn-outline-primary" href="{% url 'core:project-delete' pk=project.pk %}">{% trans "Delete"%}</a>
       </div>

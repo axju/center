@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 22:04+0000\n"
+"POT-Creation-Date: 2018-11-17 23:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,136 +18,263 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: alpha/templates/alpha/acc_active_email.html:4
+#: alpha/forms.py:34
+msgid "Email already exists"
+msgstr "E-Mail existiert bereits"
+
+#: alpha/templates/alpha/acc_active_email.html:5
 msgid "Please click on the link to confirm your registration,"
-msgstr ""
+msgstr "Bitte klicken Sie auf den Link, um Ihre Anmeldung zu bestätigen."
 
 #: alpha/templates/alpha/index.html:5
 msgid "Welcome"
 msgstr "Willkommen"
 
-#: alpha/templates/alpha/index.html:9
+#: alpha/templates/alpha/index.html:13
 msgid "Welcome to Center"
 msgstr "Willkommen bei Center"
 
 #: alpha/templates/alpha/index.html:15
-msgid "Infos"
-msgstr "Infos"
+#, fuzzy
+#| msgid "Still a beta version. Use at your own risk."
+msgid "Still a beta version. Try at your own risk."
+msgstr "Noch eine Beta-Version. Benutzen auf eigene Gefahr."
 
-#: alpha/templates/alpha/index.html:17
+#: alpha/templates/alpha/index.html:16
 msgid "A very small and lightweight project management tool."
 msgstr "Ein sehr kleines und schlankes Projektmanagement-Tool."
 
-#: alpha/templates/alpha/index.html:18
+#: alpha/templates/alpha/index.html:17
 msgid "Features"
 msgstr "Merkmal"
 
-#: alpha/templates/alpha/index.html:20
+#: alpha/templates/alpha/index.html:19
 msgid "lightweight"
 msgstr "schlank"
 
-#: alpha/templates/alpha/index.html:21
+#: alpha/templates/alpha/index.html:20
 msgid "fast work flow"
 msgstr "schneller Workflow"
 
-#: alpha/templates/alpha/index.html:22
+#: alpha/templates/alpha/index.html:21
 msgid "unlimited projects"
 msgstr "unbegrenzte Projekte"
 
-#: alpha/templates/alpha/index.html:23
+#: alpha/templates/alpha/index.html:22
 msgid "classify projects according to priority"
-msgstr ""
+msgstr "Projekte nach Priorität einstufen"
+
+#: alpha/templates/alpha/index.html:23
+msgid "track the progress of each project"
+msgstr "Verfolge den Fortschritt jedes Projekts"
 
 #: alpha/templates/alpha/index.html:24
-msgid "track the progress of each project"
+msgid "setup your own server or signup"
+msgstr "Richten Sie Ihren eigenen Server ein oder melden Sie sich an"
+
+#: alpha/templates/alpha/index.html:34
+msgid "Hello"
 msgstr ""
 
-#: alpha/templates/alpha/index.html:25
-msgid "setup your own server or sing up"
-msgstr ""
+#: alpha/templates/alpha/index.html:36
+#, fuzzy
+#| msgid "Projects"
+msgid "Your projects"
+msgstr "Projekte"
 
-#: alpha/templates/alpha/index.html:33 alpha/templates/alpha/index.html:38
+#: alpha/templates/alpha/index.html:45 alpha/templates/alpha/index.html:50
 #: alpha/templates/alpha/login.html:5 alpha/templates/alpha/login.html:14
 #: alpha/templates/alpha/login.html:19
 msgid "Login"
-msgstr ""
+msgstr "Anmelden"
 
-#: alpha/templates/alpha/index.html:46 alpha/templates/alpha/index.html:51
-msgid "Signup"
-msgstr ""
-
+#: alpha/templates/alpha/index.html:58 alpha/templates/alpha/index.html:63
 #: alpha/templates/alpha/signup.html:5 alpha/templates/alpha/signup.html:14
 #: alpha/templates/alpha/signup.html:19
-msgid "Sign up"
-msgstr ""
+msgid "Signup"
+msgstr "Registrieren"
 
-#: center/settings/base.py:35
+#: alpha/templates/alpha/pages/help.html:4
+#: alpha/templates/alpha/pages/help.html:8 templates/base.html:92
+msgid "Help"
+msgstr "Hilfe"
+
+#: alpha/templates/alpha/pages/help.html:9
+msgid "Sorry, but there is no help for you."
+msgstr "Sorry, aber es gibt keine Hilfe für dich."
+
+#: alpha/templates/alpha/pages/privacy.html:4
+#: alpha/templates/alpha/pages/privacy.html:8
+msgid "Legal Disclosure"
+msgstr "Rechtliche Hinweise"
+
+#: alpha/templates/alpha/pages/privacy.html:15
+msgid "Accountability for content"
+msgstr "Verantwortlichkeit für den Inhalt"
+
+#: alpha/templates/alpha/pages/privacy.html:17
+msgid ""
+"\n"
+"  The contents of our pages have been created with the utmost care. However, "
+"we\n"
+"  cannot guarantee the contents' accuracy, completeness or topicality. "
+"According\n"
+"  to statutory provisions, we are furthermore responsible for our own "
+"content on\n"
+"  these web pages. In this matter, please note that we are not obliged to\n"
+"  monitor the transmitted or saved information of third parties, or "
+"investigate\n"
+"  circumstances pointing to illegal activity. Our obligations to remove or "
+"block\n"
+"  the use of information under generally applicable laws remain unaffected "
+"by\n"
+"  this as per §§ 8 to 10 of the Telemedia Act (TMG).\n"
+"  "
+msgstr ""
+"\n"
+"Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die "
+"Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch "
+"keine Gewähr übernehmen. Gemäß den gesetzlichen Bestimmungen sind wir "
+"außerdem für die eigenen Inhalte auf diesen Webseiten verantwortlich. Wir "
+"weisen darauf hin, dass wir nicht verpflichtet sind, übermittelte oder "
+"gespeicherte Informationen von Dritten zu überwachen oder nach Umständen zu "
+"forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen "
+"zur Entfernung oder Sperrung der Nutzung von Informationen nach den "
+"allgemeinen Gesetzen bleiben hiervon unberührt gemäß den §§ 8 bis 10 des "
+"Telemediengesetzes (TMG)."
+
+#: alpha/templates/alpha/pages/privacy.html:29
+msgid "Accountability for links"
+msgstr "Verantwortlichkeit für Links"
+
+#: alpha/templates/alpha/pages/privacy.html:31
+msgid ""
+"\n"
+"    Responsibility for the content of external links (to web pages of third\n"
+"    parties) lies solely with the operators of the linked pages. No "
+"violations\n"
+"    were evident to us at the time of linking. Should any legal "
+"infringement\n"
+"    become known to us, we will remove the respective link immediately.\n"
+"  "
+msgstr ""
+"\n"
+"Für den Inhalt externer Links (auf Webseiten Dritter) sind ausschließlich "
+"deren Betreiber verantwortlich. Verstöße waren zum Zeitpunkt der Verlinkung "
+"nicht erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden wir "
+"derartige Links umgehend entfernen."
+
+#: alpha/templates/alpha/pages/privacy.html:39
+msgid "Copyright"
+msgstr "Urheberrechte"
+
+#: alpha/templates/alpha/pages/privacy.html:41
+msgid ""
+"\n"
+"    Our web pages and their contents are subject to German copyright law. "
+"Unless\n"
+"    expressly permitted by law, every form of utilizing, reproducing or\n"
+"    processing works subject to copyright protection on our web pages "
+"requires\n"
+"    the prior consent of the respective owner of the rights. Individual\n"
+"    reproductions of a work are only allowed for private use. The materials "
+"from\n"
+"    these pages are copyrighted and any unauthorized use may violate "
+"copyright\n"
+"    laws.\n"
+"  "
+msgstr ""
+"\n"
+"Unsere Webseiten und deren Inhalte unterliegen dem deutschen Urheberrecht. "
+"Jede Form der Nutzung, Vervielfältigung oder Bearbeitung urheberrechtlich "
+"geschützter Werke auf unseren Webseiten bedarf, sofern nicht ausdrücklich "
+"gesetzlich zulässig, der vorherigen Zustimmung des jeweiligen "
+"Rechtsinhabers. Einzelne Vervielfältigungen eines Werkes sind nur für den "
+"privaten Gebrauch gestattet. Die Materialien auf diesen Seiten sind "
+"urheberrechtlich geschützt und jegliche nicht autorisierte Verwendung kann "
+"gegen das Urheberrecht verstoßen."
+
+#: alpha/views.py:60
+msgid "Page does not exist"
+msgstr "Seite existiert nicht"
+
+#: alpha/views.py:89
+msgid "We send you a active link. Please confirm."
+msgstr "Wir senden Ihnen einen aktiven Link. Bitte bestätigen."
+
+#: alpha/views.py:105
+msgid "Welcome to Center. Your account is now activate."
+msgstr "Willkommen bei Center. Ihr Konto wurde aktiviert."
+
+#: center/settings/base.py:43
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
-#: center/settings/base.py:36
+#: center/settings/base.py:44
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
-#: center/settings/base.py:48
-msgid "Activate your account on short-report"
-msgstr ""
+#: center/settings/base.py:56
+msgid "Activate your account on center"
+msgstr "Aktivieren Sie Ihr Konto bei Center"
 
 #: core/models.py:8
 msgid "Project name"
-msgstr ""
+msgstr "Projektname"
 
 #: core/models.py:9 core/models.py:30
 #: core/templates/core/project_detail.html:32
 #: core/templates/core/project_list.html:15
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: core/models.py:10
 msgid "Goal"
-msgstr ""
+msgstr "Ziel"
 
 #: core/models.py:12 core/models.py:28
 #: core/templates/core/project_detail.html:33
 msgid "Priority"
-msgstr ""
+msgstr "Priorität"
 
-#: core/models.py:13 core/models.py:29 core/templates/core/project_list.html:14
-msgid "Process"
-msgstr ""
+#: core/models.py:13 core/models.py:29
+#: core/templates/core/project_detail.html:34
+#: core/templates/core/project_list.html:14
+msgid "Progress"
+msgstr "Fortschritt"
 
 #: core/templates/core/project_confirm_delete.html:4
 #: core/templates/core/project_confirm_delete.html:14
 #, python-format
 msgid "Delete \"%(object)s\""
-msgstr ""
+msgstr "Lösche \"%(object)s\""
 
 #: core/templates/core/project_confirm_delete.html:19
 #, python-format
 msgid "Are you sure you want to delete \"%(object)s\"?"
-msgstr ""
+msgstr "Möchtest du \"%(object)s\" wirklich löschen?"
 
 #: core/templates/core/project_confirm_delete.html:20
 msgid "Confirm"
-msgstr ""
+msgstr "Bestätigen"
 
 #: core/templates/core/project_detail.html:12
 #: core/templates/core/project_list.html:34
-msgid "Review"
-msgstr ""
+msgid "Update"
+msgstr "Aktualisieren"
 
 #: core/templates/core/project_detail.html:13
 #: core/templates/core/project_form.html:7
 #: core/templates/core/project_form.html:22
 #: core/templates/core/project_list.html:36
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: core/templates/core/project_detail.html:14
 #: core/templates/core/project_list.html:37
 #: venv/lib/python3.6/site-packages/django/forms/formsets.py:375
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: core/templates/core/project_detail.html:24
 msgid "Description:"
@@ -155,88 +282,76 @@ msgstr ""
 
 #: core/templates/core/project_detail.html:25
 msgid "Goal:"
-msgstr ""
+msgstr "Beschreibung:"
 
 #: core/templates/core/project_detail.html:31
 msgid "Date"
-msgstr ""
-
-#: core/templates/core/project_detail.html:34
-msgid "Progress"
-msgstr ""
+msgstr "Datum"
 
 #: core/templates/core/project_form.html:9
-#: core/templates/core/project_form.html:24
+#: core/templates/core/project_form.html:24 templates/base.html:36
 msgid "New Project"
-msgstr ""
+msgstr "Neues Projekt"
 
 #: core/templates/core/project_form.html:31
 #: core/templates/core/projectreview_form.html:21
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: core/templates/core/project_list.html:4
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #: core/templates/core/project_list.html:13
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: core/templates/core/project_list.html:16
-msgid "Reviews"
-msgstr ""
+msgid "Updates"
+msgstr "Aktualisierung"
 
 #: core/templates/core/project_list.html:17
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 #: core/templates/core/project_list.html:35
 msgid "Show"
-msgstr ""
+msgstr "Anzeigen"
 
 #: core/templates/core/projectreview_form.html:5
 #: core/templates/core/projectreview_form.html:15
-msgid "Review:"
-msgstr ""
+msgid "Update:"
+msgstr "Aktualisieren:"
 
 #: templates/403.html:9
-msgid "Was hast du denn vor?"
-msgstr ""
+msgid "What??????????"
+msgstr "Was geht?????????"
 
 #: templates/403.html:10
-msgid "Hier geht es zurück ;)"
-msgstr ""
+msgid "Here it goes back ;)"
+msgstr "Hier geht es zurück ;)"
 
 #: templates/404.html:9
-msgid "Hier solltest du gar nicht hin."
-msgstr ""
+msgid "You should not go here."
+msgstr "Hier solltest du gar nicht hin."
 
 #: templates/404.html:10
-msgid "Zurück"
-msgstr ""
+msgid "Back"
+msgstr "Zurück"
 
-#: templates/base.html:36
-msgid "New Projects"
-msgstr ""
-
-#: templates/base.html:48
+#: templates/base.html:50
 msgid "Logout"
-msgstr ""
+msgstr "Ausloggen"
 
-#: templates/base.html:75
+#: templates/base.html:92
 msgid "Privacy"
-msgstr ""
-
-#: templates/base.html:75
-msgid "Terms"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_form_helper.py:140
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_form_helper.py:150
 #: venv/lib/python3.6/site-packages/django/forms/fields.py:52
 msgid "This field is required."
-msgstr ""
+msgstr "Dieses Feld wird benötigt."
 
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_layout.py:355
 msgid "i18n text"
@@ -249,11 +364,11 @@ msgstr ""
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_layout_objects.py:127
 #: venv/lib/python3.6/site-packages/django/core/validators.py:31
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Geben Sie einen gültigen Wert ein."
 
 #: venv/lib/python3.6/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
-msgstr ""
+msgstr "Mitteilungen"
 
 #: venv/lib/python3.6/site-packages/django/contrib/sitemaps/apps.py:7
 msgid "Site Maps"
@@ -290,7 +405,7 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/core/validators.py:165
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Geben sie eine gültige E-Mail-Adresse an."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: venv/lib/python3.6/site-packages/django/core/validators.py:239
@@ -1409,3 +1524,6 @@ msgstr ""
 #: venv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:408
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Infos"
+#~ msgstr "Infos"
