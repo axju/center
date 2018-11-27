@@ -22,11 +22,23 @@
     </a>
   </div>
 
-  <div class="col-12 col-md-4">{{ project.description|truncatechars:200 }}</div>
+  <div class="col-12 col-md-4">
+    {{ project.description|truncatechars:80 }}
+    {% if project.description|length > 80 %}
+      <a class="btn btn-outline-primary pt-0 pb-0" data-toggle="collapse" data-target="#description{{ project.pk }}">more</a>
+    {% endif %}
+  </div>
+
+  <div class="col-12 collapse m-2" id="description{{ project.pk }}" ><pre>{{ project.description }}<pre></div>
 
 </div>
 
 <hr class="m-1">
+
+{% empty %}
+
+<p>{% trans "No Projects." %} <a href="{% url 'core:project-create' %}">{% trans "Create some."%}</a></p>
+
 {% endfor %}
 
 {% endblock %}
