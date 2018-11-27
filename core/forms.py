@@ -5,7 +5,7 @@ from core.models import Project, ProjectReview
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['name', 'description', 'goal', 'percent', 'priority']
+        fields = ['name', 'description', 'categorys', 'percent', 'priority']
         widgets = {
             'percent': forms.NumberInput(attrs={'type':'range', 'step': '1'}),
         }

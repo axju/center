@@ -32,8 +32,24 @@
         {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:project-create' %}">{% trans "New Project"%}</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              {% trans "Project"%}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'core:project-list' %}">{% trans "List"%}</a>
+              <a class="dropdown-item" href="{% url 'core:project-create' %}">{% trans "New"%}</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              {% trans "Category"%}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'core:category-list' %}">{% trans "List"%}</a>
+              <a class="dropdown-item" href="{% url 'core:category-create' %}">{% trans "New"%}</a>
+            </div>
           </li>
 
         </ul>
@@ -73,7 +89,7 @@
 
     <main>
       {% if messages %}
-      <div class="container" style="position: absolute; z-index: 10; bottom: 100px; left: 50%; transform: translate(-50%, -50%); max-width: 500px;">
+      <div class="container mt-3">
         {% for message in messages %}
         <div class="alert {{ message.tags }} alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert">&times;</button>

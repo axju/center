@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Categorys"%}{% endblock %}
+
+
+{% block content %}
+<p>
+{% for category in object_list %}
+  <span class="border border-primary rounded p-1 m-1">
+    <span>{{ category.name }}</span>
+    <span><a href="{% url 'core:category-delete' pk=category.pk %}">&times;</a></span>
+  </span>
+{% endfor %}
+<a href="{% url 'core:category-create' %}">{% trans "New category"%}</a>
+</p>
+{% endblock %}

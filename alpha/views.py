@@ -46,7 +46,10 @@ def set_language(request, language):
     return redirect(next_url)
 
 class IndexView(View):
+
     def get(self, request):
+        if request.user.is_authenticated: return redirect('core:project-list')
+
         signup_form = SignupForm()
         login_form = AuthenticationForm()
         return render(request, 'alpha/index.html', {'signup_form': signup_form, 'login_form': login_form})
@@ -86,7 +89,7 @@ class SignupView(FormView):
             [form.cleaned_data.get('email')],
             fail_silently=False,
         )
-        messages.add_message(self.request, messages.INFO, _('We send you a active link. Please confirm.'))
+        messages.add_message(self.request, messages.INFO, _('We send you an active link. Please confirm.'))
         return super().form_valid(form)
 
 
@@ -105,4 +108,4 @@ class ActivateView(View):
             messages.add_message(request, messages.INFO, _('Welcome to Center. Your account is now activate.'))
             return redirect(settings.LOGIN_REDIRECT_URL)
 
-        return redirect('/')
+        return redirect('core:project-list')

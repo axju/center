@@ -1,0 +1,6 @@
+<div class="btn-group btn-group-sm">
+  <a class="btn btn-outline-primary pt-0 pb-0" href="{% url 'core:project-list' filter='priority' q=project.priority %}">P{{ project.priority }}</a>
+  {% for c in project.categorys.all %}
+    <a class="btn btn-outline-primary pt-0 pb-0" href="{% url 'core:project-list' filter='category' q=c.name %}">{{ c }}</a>
+  {% endfor %}
+</div>

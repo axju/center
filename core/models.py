@@ -3,13 +3,20 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
+class Category(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='categorys')
+    name = models.CharField(_('Category name'), max_length=256)
+
+    def __str__(self):
+        return self.name
+
 class Project(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='projects')
     name = models.CharField(_('Project name'), max_length=256)
     description = models.TextField(_('Description'), default='')
-    goal = models.TextField(_('Goal'))
+    categorys = models.ManyToManyField(Category, blank=True)
 
-    priority = models.IntegerField(_('Priority'), default=8, choices=[(i,str(i)) for i in range(11)])
+    priority = models.IntegerField(_('Priority'), default=8, choices=[(i,str(i)) for i in range(10,-1,-1)])
     percent = models.IntegerField(_('Progress'), default=5)
 
     class Meta:
@@ -25,7 +32,7 @@ class Project(models.Model):
 class ProjectReview(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='reviews')
     create_at = models.DateTimeField(auto_now_add=True)
-    priority = models.IntegerField(_('Priority'), default=8, choices=[(i,str(i)) for i in range(11)])
+    priority = models.IntegerField(_('Priority'), default=8, choices=[(i,str(i)) for i in range(10,-1,-1)])
     percent = models.IntegerField(_('Progress'), default=5)
     description = models.TextField(_('Description'), default='')
 

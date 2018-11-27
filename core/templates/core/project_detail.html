@@ -9,7 +9,7 @@
     <h2>
       {{ object.name|title }}
       <div class="btn-group btn-group-sm float-right">
-        <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">{% trans "Update"%}</a>
+        <a class="btn btn-outline-primary" href="{% url 'core:project-review' pk=project.pk %}">{% trans "Work"%}</a>
         <a class="btn btn-outline-primary" href="{% url 'core:project-update' pk=project.pk %}">{% trans "Edit"%}</a>
         <a class="btn btn-outline-primary" href="{% url 'core:project-delete' pk=project.pk %}">{% trans "Delete"%}</a>
       </div>
@@ -19,10 +19,10 @@
     <div class="progress">
       <div class="progress-bar" style="width:{{ object.percent }}%">{{ object.percent }}%</div>
     </div>
-    <br>
 
-    <p><strong>{% trans "Description:"%}</strong> {{ object.description }}</p>
-    <p><strong>{% trans "Goal:"%}</strong> {{ object.goal }}</p>
+    <p>{% include "core/includes/project_list_filter.html" %}</p>
+
+    <pre>{{ object.description }}</pre>
 
     <div class="table-responsive">
       <table class="table">
